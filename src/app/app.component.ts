@@ -8,7 +8,7 @@ import { GetUsersService } from './services/get-users.service';
 })
 export class AppComponent implements OnInit {
 
-    public usersList: any[];
+    public usersList: object[];
 
     public constructor(private getUsersService: GetUsersService) {
 
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
 
     public ngOnInit(): void {
         this.getUsersService.getUsers(15).subscribe(data => {
-             this.usersList = data.results;
+            this.usersList = data.results;
              console.log(data);
         });
     }
